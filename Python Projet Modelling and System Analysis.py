@@ -22,13 +22,13 @@ vitesseDeVariabilitéDuRapportDeLongueur = 0
 # Choix des valeurs de paramètres adimensionnels
 gamma = 1
 mu = 1
-xi = 1
-lambdA = 0
+xi = 0.5
+lambdA = 0.5
 nu = 1
 sigma = 0.5
-alpha = 1
+alpha = 0.5
 delta = 1
-eta = 1
+eta = 0.5
 pi = np.pi
 
 parametres_adim = (gamma, mu, xi, lambdA, nu, sigma, alpha, delta, eta, pi)
