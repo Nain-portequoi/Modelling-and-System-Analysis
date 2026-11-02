@@ -1,7 +1,7 @@
 # Projet Modelling and System Analysis
 
 
-#    Rendu :  manim -pql ton_fichier.py Systeme
+#    Rendu :  manim -pqm "Projet Modelling animation Manim.py" Systeme
 
 
 
@@ -27,7 +27,7 @@ vitesseDeVariabilitéDuRapportDeLongueur = 0
 
 # Choix des valeurs de paramètres adimensionnels
 gamma = 1
-mu = 1
+mu = 1.5
 xi = 0.5
 lambdA = 0.5
 nu = 1
