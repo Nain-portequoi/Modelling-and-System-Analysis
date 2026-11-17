@@ -4,6 +4,7 @@
 import numpy as np
 from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
+from scipy.optimize import fsolve
 
 # Précision
 
@@ -11,11 +12,11 @@ précision_relative = 1e-6
 précision_absolue = 1e-8
 
 # Durée de la simulation
-duréeSimulation = 10
+duréeSimulation = 30
 
 # Conditions initiales 
-theta = 1
-psi = 0.8
+theta = -2.915532455310049
+psi = 0.28781892806438886
 vitesseDeRotation = 0
 vitesseDeVariabilitéDuRapportDeLongueur = 0
 
@@ -24,7 +25,7 @@ gamma = 1
 mu = 1
 xi = 0.5
 lambdA = 0.5
-nu = 0
+nu = 1
 sigma = 0.5
 alpha = 0.5
 delta = 1
@@ -99,6 +100,31 @@ Ep_rel = Ep - Ep[0]
 # Energie totale
 
 E_totale = Ek + Ep_rel
+
+
+#---------------------- Racines -------------------------------------------------------
+
+
+def equations(variables) : 
+
+    theta_0, psi_0 = variables 
+
+    eq1 = 4*pi**2 *(delta * eta / sigma) * fonction_epsilon(sigma, psi_0, xi, alpha, theta_0)*(psi_0 * np.cos(theta_0) - alpha * np.sin(psi_0)) - 4 * pi**2 * np.sin(theta_0)
+    eq2 = 1 / (mu**2) * 4 * pi**2 * (1 - psi_0 - lambdA) - 1 / (gamma**2) * fonction_epsilon(sigma, psi_0, xi, alpha, theta_0) * 4 * pi**2 * (psi_0 - xi * np.sin(theta_0))
+
+    return [eq1, eq2]
+
+
+valeurs_initial = [-2.9155324553100486, 0.28781892806438886]         # theta* et Psi* 
+
+solution = fsolve(equations, valeurs_initial)
+
+print(f"Psi*  = {solution[1]} et theta* = {solution[0]}")
+
+
+
+# -------------------- Plot -----------------------------------------------------------
+
 
 
 # Graphique : theta et psi en fonction de thau

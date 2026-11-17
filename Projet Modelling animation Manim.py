@@ -17,11 +17,11 @@ précision_relative = 1e-6
 précision_absolue = 1e-8
 
 # Durée de la simulation
-duréeSimulation = 50
+duréeSimulation = 5
 
 # Conditions initiales 
-theta = -0.5
-psi = -1
+theta = -2.915532455310049
+psi = 0.28781892806438886
 vitesseDeRotation = 0
 vitesseDeVariabilitéDuRapportDeLongueur = 0
 
