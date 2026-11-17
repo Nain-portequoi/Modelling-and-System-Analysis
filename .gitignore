@@ -1,3 +1,5 @@
 media/
 .venv/
 __pycache__/
+resultats_energie.png
+resultats_simulation.png
